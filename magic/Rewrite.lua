@@ -1,6 +1,6 @@
-getgenv().Melon = {
-    ["Version"] = ('0.32');
-    ["Loader"] = {['Key'] = ('Input Key Here'); ['Unlock FPS'] = (360); ['Intro'] = (true); ['ModDetector'] = (true)};
+getgenv().Magic = {
+    ["Version"] = ('0.33');
+    ["Loader"] = {['Key'] = ('Input Key Here'); ['Unlock FPS'] = (360); ['Intro'] = (true)};
     ["Universal"] = {
         ['FFAMode'] = (true), --[[ Turn this to true if you are in a FFA game. ]]--
         ['Resolver'] = {['Enabled'] = (true), ['AutoResolve'] = (true), ['MaxVelocity'] = (50)}, --[[ Disabled ]]
@@ -11,7 +11,7 @@ getgenv().Melon = {
         ['Enabled'] = (true),
         ['ToggleKey'] = ('C'),
         ['StickyFOV'] = (true), --[[ Disabled ]]
-        ['TargetMode'] = ('Box'), --[[ "FOV", "Target", "Box" ]]--
+        ['TargetMode'] = ('FOV'), --[[ "FOV", "Target", "Box" ]]--
         --               [X   Y   Z]
         ['Prediction'] = {0, 0, 0}, --[[ Disabled ]]
         ['AirPrediction'] = {0, 0, 0}, --[[ Disabled ]]
@@ -28,6 +28,7 @@ getgenv().Melon = {
         ['Sticky'] = (true),
         ['TargetMode'] = ('Target'), --[[ "Target" ]]--
         ['Unlock On Death'] = (true),
+        ['Radius Enabled'] = (true),
         --
         ['Bezier Curves'] = (true),
         --
@@ -57,25 +58,30 @@ getgenv().Melon = {
         ['Parts'] = {'Head'} --[[ https://create.roblox.com/docs/reference/engine/enums/BodyPartR15 ]]--
     },
     ["Physics"] = {
-        ['Walking'] = {['Enabled'] = (false), ['Toggle'] = ('V'), ['Mode'] = ('Slippery'), ['Amount'] = (90)}, --[[ "Slippery", "CFrame" ]]--
+        ['Walking'] = {['Enabled'] = (true), ['Toggle'] = ('V'), ['Mode'] = ('Slippery'), ['Amount'] = (120)}, --[[ "Slippery", "CFrame" ]]--
         ['Flight'] = {['Enabled'] = (true), ['Toggle'] = ('Z'), ['Amount'] = (220)}
     },
     ["Modifications"] = { --                                       [X  Y  Z]
-        ['Hitbox Extender'] = {['Enabled'] = (true), ['Radius'] = ({3, 5, 3}), ['Visible'] = true},
-        ['Spread Reduction'] = {['Enabled'] = (true), ['Amount'] = (75)},
-        ['Client Redirection'] = {['Enabled'] = (false)}
+        ['Hitbox Extender'] = {['Enabled'] = (false), ['Radius'] = ({12, 12, 12}), ['Visible'] = false},
+        ['Spread Reduction'] = {['Enabled'] = (true), ['Amount'] = (75), ['Randomizer'] = {
+            ['Enabled'] = (false),
+            ['MinimumAmount'] = (50),
+            ['MaximumAmount'] = (75)
+        }},
+        ['Client Redirection'] = {['Enabled'] = (true)}
     },
     ["Exploits"] = {
-        ['Rapid Fire'] = {['Enabled'] = true, ['Full Auto'] = true}, --[[ Automatics ]]
-        ['Wallbang'] = {['Enabled'] = true}
+        ['Rapid Fire'] = {['Enabled'] = false, ['Full Auto'] = true}, --[[ Automatics ]]
+        ['Wallbang'] = {['Enabled'] = false}
     },
     ["Checks"] = {
         ['Forcefield'] = true, ['Visible'] = true, ['Knocked'] = true,
         ['Grabbed'] = true, ['Typing'] = true, ['Friend'] = false,
-        ['Alive'] = true, ['Wall'] = false, ['Crew'] = false
+        ['Alive'] = true, ['Wall'] = true, ['Crew'] = false
     },
     ["Fields"] = {
-        ['SilentField'] = {['Visible'] = (true), ['Size'] = (30)},
+        ['AimAssistField'] = {['Size'] = (120)},
+        ['SilentField'] = {['Visible'] = (true), ['Size'] = (80)},
         ['TriggerField'] = {['Size'] = ({3, 5, 3})},
         ['SilentBoxField'] = {['X'] = 1.2, ['Y'] = 1.2, ['Visible'] = true}
     }
