@@ -1,5 +1,5 @@
 getgenv().Magic = {
-    ["Version"] = ('0.33');
+    ["Version"] = ('0.34');
     ["Loader"] = {['Key'] = ('Input Key Here'); ['Unlock FPS'] = (360); ['Intro'] = (true)};
     ["Universal"] = {
         ['FFAMode'] = (true), --[[ Turn this to true if you are in a FFA game. ]]--
@@ -12,7 +12,7 @@ getgenv().Magic = {
         ['ToggleKey'] = ('C'),
         ['StickyFOV'] = (true), --[[ Disabled ]]
         ['TargetMode'] = ('FOV'), --[[ "FOV", "Target", "Box" ]]--
-        --               [X   Y   Z]
+        --               
         ['Prediction'] = {0, 0, 0}, --[[ Disabled ]]
         ['AirPrediction'] = {0, 0, 0}, --[[ Disabled ]]
         --
@@ -34,7 +34,7 @@ getgenv().Magic = {
         --
         ['Smoothing'] = (0.008588),
         ['AirSmoothing'] = (0.008588),
-        --               [X   Y   Z]
+        --               
         ['Prediction'] = {0, 0, 0},
         ['AirPrediction'] = {0, 0, 0},
         --
@@ -61,7 +61,11 @@ getgenv().Magic = {
         ['Walking'] = {['Enabled'] = (true), ['Toggle'] = ('V'), ['Mode'] = ('Slippery'), ['Amount'] = (120)}, --[[ "Slippery", "CFrame" ]]--
         ['Flight'] = {['Enabled'] = (true), ['Toggle'] = ('Z'), ['Amount'] = (220)}
     },
-    ["Modifications"] = { --                                       [X  Y  Z]
+    ["Modifications"] = { --
+        ['Boundary Enhancer'] = {['Enabled'] = (true), ['Spoof Radius'] = {
+            ['X'] = 75,
+            ['Y'] = 75
+        }, ['Part'] = ('Head')},
         ['Hitbox Extender'] = {['Enabled'] = (false), ['Radius'] = ({12, 12, 12}), ['Visible'] = false},
         ['Spread Reduction'] = {['Enabled'] = (true), ['Amount'] = (75), ['Randomizer'] = {
             ['Enabled'] = (false),
